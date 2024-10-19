@@ -1,0 +1,58 @@
+import pandas as pd
+import os
+from docx import Document
+from docx.shared import Pt, Inches
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+# Define the path to the excel file
+file_path = '**INSERT FILE***'
+
+# Load the data from the Excel file
+df = pd.read_excel(file_path, sheet_name='Sheet3')  
+
+# Function to create a Word document for each student with the data in a table
+def create_student_documents_with_table(dataframe):
+    # Define the directory for the documents to keep things organized
+    docs_dir = '***FILE LOCATION****'
+    os.makedirs(docs_dir, exist_ok=True)
+    
+    # Exclude specific fields
+    excluded_fields = ['NESA', 'Home_Room']
+    
+    # Iterate over the dataframe and create a document for each student
+    for index, row in dataframe.iterrows():
+        # Combine last and first names for the document title
+        student_name = f"{row['Last_Name'].strip()}_{row['First_Name'].strip()}".replace(' ', '_')
+        doc = Document()
+        
+        # Add a title to the document
+        title = doc.add_paragraph('***DOCUMENT TITLE')
+        title.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        title.runs[0].bold = True
+        title.runs[0].font.size = Pt(14)
+        
+        # Add a space after the title
+        doc.add_paragraph()
+
+        # Create a table in the document with one row for each column in the dataframe
+        table = doc.add_table(rows=0, cols=2)
+        table.style = 'Table Grid'
+        
+        # Add a row to the table for each field, excluding specified fields
+        for col in dataframe.columns:
+            if col not in excluded_fields and pd.notna(row[col]):
+                row_cells = table.add_row().cells
+                row_cells[0].text = str(col)
+                row_cells[1].text = str(row[col])
+                for cell in row_cells:
+                    cell.paragraphs[0].runs[0].font.size = Pt(10)
+        
+        # Save the document in the specified directory with the student's name as the title
+        doc_path = os.path.join(docs_dir, f'{student_name}_Learning Conversation.docx')
+        doc.save(doc_path)
+        print(f"Saved: {doc_path}")
+
+# Create documents with the corrected function
+create_student_documents_with_table(df)
+
+print("All documents have been created.")
