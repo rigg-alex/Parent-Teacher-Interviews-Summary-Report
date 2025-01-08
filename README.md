@@ -1,6 +1,6 @@
 # Parent-Teacher-Interviews-Summary-Report
 
-This Python script generates individualised Word documents for each student, containing data from an Excel spreadsheet. Each document includes the student's details in a table format, with specific fields excluded. The output files are saved with a standardized naming convention.
+This Python script generates individualised Word documents for each student, containing data from an Excel spreadsheet. Each document includes the student's details in a table format, with specific fields excluded. The output files are saved with a standardised naming convention. I like to be transparent with my data/records and provide this print out either before PT interviews or on the evening to the student/parent. 
 
 ## Prerequisites
 
@@ -32,3 +32,11 @@ pip install pandas openpyxl python-docx
 ## Template
 This is a template with fictional data. 
 [Student_Data_Template.csv](https://github.com/user-attachments/files/17441950/Student_Data_Template.csv)
+
+## Example Output
+See example output 
+
+## Future Improvements
+- make it pretty (formatting, college logo etc)
+- From a pipeline
+- Automatic population from online learning. 
