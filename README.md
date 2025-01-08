@@ -39,4 +39,6 @@ See example output
 ## Future Improvements
 - make it pretty (formatting, college logo etc)
 - From a pipeline
-- Automatic population from online learning. 
+- Automatic population from online learning.
+- Make graphs
+- Include class attendance 
