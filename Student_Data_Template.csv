@@ -1,0 +1,9 @@
+First_Name,Last_Name,Home_Room,NESA,Math_Score,English_Score,Science_Score,Attendance,Comments,Task1,Task2,Task3,Homework_Check
+John,Doe,H1,NSW123,85,78,88,95%,Good progress,Complete,Complete,Incomplete,Yes
+Alice,Smith,H2,NSW456,92,85,79,98%,Excellent work,Complete,Incomplete,Complete,Yes
+Michael,Johnson,H1,NSW789,76,89,91,93%,Needs improvement,Incomplete,Complete,Complete,No
+Emily,Brown,H3,NSW321,88,94,83,96%,Outstanding,Complete,Complete,Incomplete,Yes
+David,Williams,H2,NSW654,91,67,77,91%,Satisfactory,Complete,Incomplete,Complete,No
+Sophia,Taylor,H1,NSW987,73,88,84,97%,Great effort,Incomplete,Complete,Complete,Yes
+James,Lee,H3,NSW213,82,79,90,94%,Fair performance,Complete,Incomplete,Complete,No
+Olivia,Harris,H2,NSW876,95,92,86,99%,Consistent,Complete,Complete,Incomplete,Yes
